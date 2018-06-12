@@ -6,6 +6,8 @@ onesComplement(1001) = 0110
 For any given binary number,formatted as a string, return the Ones' Complement of that number.
 */
 
+// My solution
+
 function onesComplement(n) {
 return n.replace(/[01]/g, function(n) {
 return 1 - n;
