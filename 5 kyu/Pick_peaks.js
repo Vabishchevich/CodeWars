@@ -7,21 +7,21 @@ Example: pickPeaks([3, 2, 3, 6, 4, 1, 2, 3, 2, 1, 2, 3]) should return {pos: [3,
 All input arrays will be valid integer arrays (although it could still be empty), so you won't need to validate the input.
 The first and last elements of the array will not be considered as peaks (in the context of a mathematical function, we don't know what 
 is after and before and therefore, we don't know if it is a peak or not).
-Also, beware of plateaus !!! [1, 2, 2, 2, 1] has a peak while [1, 2, 2, 2, 3] does not. In case of a plateau-peak, please only return the 
-position and value of the beginning of the plateau. For example: pickPeaks([1, 2, 2, 2, 1]) returns {pos: [1], peaks: [2]} (or equivalent 
-in other languages)
+Also, beware of plateaus !!! [1, 2, 2, 2, 1] has a peak while [1, 2, 2, 2, 3] does not. In case of a plateau-peak, please only return 
+the position and value of the beginning of the plateau. For example: pickPeaks([1, 2, 2, 2, 1]) returns {pos: [1], peaks: [2]} 
+(or equivalent in other languages)
 Have fun!
 */
 
 // My solution
 
-function pickPeaks(arr){
+function pickPeaks(arr) {
 var stack = {pos: [], peaks: []};
 for (var j = 1; j < arr.length; j++) {
 var index;
-if (arr[j] > arr[j - 1]){
+if (arr[j] > arr[j - 1]) {
 index = j;
-} else if (arr[j] < arr[j - 1] && index){
+} else if (arr[j] < arr[j - 1] && index) {
 stack.pos.push(index);
 stack.peaks.push(arr[index]);
 index = undefined;
